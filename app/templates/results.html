@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <table>
+        <td><h1>Search Results</h1></td>
+    </table>
+    <hr>
+    {% for material in materials %}
+        {% include '_material.html' %}
+    {% endfor %}
+{% endblock %}

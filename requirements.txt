@@ -1,2 +1,18 @@
+# main flask
 flask
+
+# python .env reading
 python-dotenv
+
+# forms
+flask-wtf
+
+# database
+flask-sqlalchemy
+flask-migrate
+
+# login
+flask-login
+
+# facelift website
+flask-bootstrap
