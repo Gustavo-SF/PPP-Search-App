@@ -6,3 +6,5 @@ venv/
 
 # Compilation files
 __pycache__
+
+# Logs
