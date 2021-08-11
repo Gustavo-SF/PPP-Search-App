@@ -1,14 +1,10 @@
-from flask import request
-from wtforms import StringField
+from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
 from flask_wtf import FlaskForm
 
-class SearchForm(FlaskForm):
-    q = StringField('Search', validators=[DataRequired()])
+TYPES = [(1,"Closest cluster"), (2, "Closest materials")]
 
-    def __init__(self, *args, **kwargs):
-        if 'formdata' not in kwargs:
-            kwargs['formdata'] = request.args
-        if 'csrf_enabled' not in kwargs:
-            kwargs['csrf_enabled'] = False
-        super(SearchForm, self).__init__(*args, **kwargs)
+class SearchForm(FlaskForm):
+    q = StringField('Name to search', validators=[DataRequired()])
+    type_of_search = SelectField("Type of search", choices=TYPES, validators=[DataRequired()])
+    submit = SubmitField('Search')
