@@ -1,0 +1,8 @@
+# Environment
+venv/
+
+# Secrets
+.env
+
+# Compilation files
+__pycache__
