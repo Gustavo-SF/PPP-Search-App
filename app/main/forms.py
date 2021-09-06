@@ -2,7 +2,7 @@ from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
 from flask_wtf import FlaskForm
 
-TYPES = [(1,"Closest cluster"), (2, "Closest materials")]
+TYPES = [(1,"Search by id"), (2, "Search by name")]
 
 class SearchForm(FlaskForm):
     q = StringField('Name to search', validators=[DataRequired()])

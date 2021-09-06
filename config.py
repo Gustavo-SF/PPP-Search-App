@@ -13,3 +13,9 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['gustavo.fonseca@outlook.pt']
+    DATABASE_NAME = os.environ.get("DATABASE_NAME")
+    AZURE_SERVER_NAME = os.environ.get("AZURE_SERVER_NAME")
+    DB_LOGIN = os.environ.get("DB_LOGIN")
+    DB_PASSWORD = os.environ.get("DB_PASSWORD")
+    SCORING_URI = os.environ.get("SCORING_URI")
+    ENDPOINT_KEY = os.environ.get("ENDPOINT_KEY")

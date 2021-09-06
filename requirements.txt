@@ -1,18 +1,17 @@
 # main flask
 flask
-
 # python .env reading
 python-dotenv
-
 # forms
 flask-wtf
-
 # database
 flask-sqlalchemy
 flask-migrate
-
+# azure db connection
+pyodbc
+# read sql tables
+pandas
 # login
 flask-login
-
 # facelift website
 flask-bootstrap
