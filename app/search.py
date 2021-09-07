@@ -34,6 +34,7 @@ def get_materials_by_id(material: str):
         TrustServerCertificate=no;
         Connection Timeout=30;
     ''')
+
     # Create a new PYODBC Connection Object
     cnxn: pyodbc.Connection = pyodbc.connect(connection_string)
 

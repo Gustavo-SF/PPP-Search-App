@@ -2,7 +2,7 @@
 # For setting up flask vars
 secret_key: FLASK_SECRET
 mail_username: MAIL_PLACEHOLDER
-mail_password: MAIL_PWD_PASSWORD
+mail_password: MAIL_PWD_PLACEHOLDER
 database_name: AZURE_DB_PLACEHOLDER
 azure_server_name: AZURE_SERVER_PLACEHOLDER
 db_login: AZURE_USER_PLACEHOLDER

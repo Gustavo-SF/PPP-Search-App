@@ -1,10 +1,7 @@
-
-
-from flask import render_template, redirect, url_for, request
+from flask import render_template
 from flask_login import login_required
 
 from app.main import bp
-from app.models import Material
 from app.main.forms import SearchForm
 from app.search import get_materials_by_id, get_materials_by_query
 

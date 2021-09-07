@@ -2,6 +2,35 @@
 #
 # Deployment of Flask App
 
+# Create security group
+az network nsg create --name myNSG -o none
+az network nsg rule create \
+   --nsg-name myNSG \
+   --name myNSGruleSSH \
+   --protocol tcp \
+   --priority 1000 \
+   --destination-port-range 22 \
+   --access allow \
+   -o none
+
+az network nsg rule create \
+   --nsg-name myNSG \
+   --name myNSGruleHTTP \
+   --protocol tcp \
+   --priority 1001 \
+   --destination-port-range 80 \
+   --access allow \
+   -o none
+
+az network nsg rule create \
+   --nsg-name myNSG \
+   --name myNSGruleHTTPS \
+   --protocol tcp \
+   --priority 1002 \
+   --destination-port-range 443 \
+   --access allow \
+   -o none
+
 # Create VM with Static IP
 az vm create \
     --name "ppp_app" \
@@ -10,6 +39,7 @@ az vm create \
     --generate-ssh-keys \
     --public-ip-address PPPIpAdress \
     --public-ip-address-allocation static \
+    --nsg myNSG
     --output none
 
 APP_VM_IP=$(az network public-ip show --name PPPIpAdress --query ipAddress -o tsv)

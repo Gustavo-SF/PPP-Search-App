@@ -1,5 +1,6 @@
 # main flask
 flask
+requests
 # python .env reading
 python-dotenv
 # forms
