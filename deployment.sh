@@ -60,11 +60,10 @@ sed "s/FLASK_SECRET/${SECRET_KEY}/; \
     s/AZURE_EKEY_PLACEHOLDER/${sed_primary_endpoint_key}/; \
     s/APP_DOMAIN_NAME/${APP_DOMAIN_NAME}/; \
     s/SSL_EMAIL/${SSL_EMAIL}/" ansible/group_vars/all_template > ansible/group_vars/all
-
 sed "s/IP/${APP_VM_IP}/" ansible/hosts_template > ansible/hosts
 
+# Run the ansible deployment to set up the code in the machine
 cd ansible/
-
 ansible-playbook -i hosts machine_initial_setup.yml
 ansible-playbook -i hosts install_nginx_supervisor.yml
 ansible-playbook -i hosts install_app.yml
