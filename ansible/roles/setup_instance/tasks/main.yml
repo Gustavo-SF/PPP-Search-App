@@ -1,0 +1,36 @@
+---
+- name: Update
+  apt:
+    upgrade: dist
+    cache_valid_time: 3600
+
+- name: Add Microsoft apt key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add proper repository
+  shell: curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
+- name: Update the cache
+  apt:
+    update_cache: yes
+
+- name: Install important utilities
+  apt:
+    pkg:
+      - git
+      - python3
+      - virtualenv
+      - python3-dev
+      - unixodbc-dev
+      - build-essential
+      - libssl-dev 
+      - libffi-dev
+
+- name: Install SQL Server prerequisites
+  apt:
+    pkg:
+      - msodbcsql17
+  environment:
+    ACCEPT_EULA: Y

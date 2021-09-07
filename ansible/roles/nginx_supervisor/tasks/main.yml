@@ -1,0 +1,46 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Install software-properties-common
+  apt:
+    name: software-properties-common
+    state: present
+
+
+- name: add certbot repository
+  apt_repository:
+    repo: ppa:certbot/certbot
+
+
+- name: Copy nginx configuration
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+  notify: reload nginx
+
+
+- name: apt update cache
+  apt:
+    update_cache: yes
+
+
+- name: Install certbot
+  apt:
+    name:
+      - certbot
+      - python3-certbot-nginx
+    state: present
+
+
+- name: install certbot certificates and auto-renewal
+  shell: certbot --nginx -m {{ ssl_email }} --agree-tos -d {{ domain_name }} --non-interactive
+
+- name: Install supervisor
+  apt:
+    name: supervisor
+    state: present
+
+- meta: flush_handlers

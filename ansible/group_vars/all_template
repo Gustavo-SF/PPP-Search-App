@@ -1,0 +1,22 @@
+---
+# For setting up flask vars
+secret_key: FLASK_SECRET
+mail_username: MAIL_PLACEHOLDER
+mail_password: MAIL_PWD_PASSWORD
+database_name: AZURE_DB_PLACEHOLDER
+azure_server_name: AZURE_SERVER_PLACEHOLDER
+db_login: AZURE_USER_PLACEHOLDER
+db_password: AZURE_PWD_PLACEHOLDER
+scoring_uri: AZURE_SURI_PLACEHOLDER
+endpoint_key: AZURE_EKEY_PLACEHOLDER
+
+# API 
+app_name: search_app
+local_port: 8000
+
+# Project specific
+project_name: PPP_APP
+
+# For setting up ssl certs
+domain_name: APP_DOMAIN_NAME
+ssl_email: SSL_EMAIL

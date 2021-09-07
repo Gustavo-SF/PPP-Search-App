@@ -1,0 +1,10 @@
+---
+- name: Install nginx and supervisor
+  handlers:
+    - import_tasks: handlers/main.yml
+  hosts: all
+
+  roles:
+    - role: nginx_supervisor
+      become: yes
+      become_method: sudo

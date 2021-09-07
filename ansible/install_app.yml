@@ -1,0 +1,11 @@
+---
+- name: Install the APP and Run it
+  handlers:
+    - import_tasks: handlers/main.yml
+  hosts: all
+  become: true
+
+  roles:
+    - role: ppp_app
+      become: yes
+      become_method: sudo

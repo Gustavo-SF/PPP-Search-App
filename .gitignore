@@ -3,12 +3,12 @@ venv/
 
 # Secrets
 .env
-
+# Ansible secrets
+hosts
+all
 # Compilation files
 __pycache__
-
 # logs
 *.log
-
 # DB
 app.db
